@@ -1,0 +1,30 @@
+# gencys_project.yaml
+
+project:
+  name: GenCys AI
+  description: AI-driven solutions for secure intelligence and automation
+  version: 1.0.0
+  active: true
+
+team:
+  - name: Ahamed
+    role: Lead Developer
+    email: xyz@gencys.ai
+  - name: Priya
+    role: ML Engineer
+    email: priya@gencys.ai
+
+technologies:
+  backend: Python
+  frontend: React
+  database: PostgreSQL
+  cloud: AWS
+
+features:
+  - Real-time AI threat detection
+  - Secure data pipelines
+  - Dashboard analytics
+
+deployment:
+  environment: production
+  region: ap-south
