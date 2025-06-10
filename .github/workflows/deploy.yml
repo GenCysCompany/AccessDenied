@@ -1,0 +1,27 @@
+name: Build
+
+on:
+  workflow_dispatch:  # Manually trigger from GitHub UI
+
+jobs:
+  run-private-script:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout public repo
+        uses: actions/checkout@v4
+
+      - name: Clone private repo
+        env:
+          TOKEN: ${{ secrets.WHATS_YOUR_PAT }}
+        run: |
+          git clone https://x-access-token:${TOKEN}@github.com/GenCysCompany/dump.git dump
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Run Python file
+        run: |
+          python dump/temp.py
